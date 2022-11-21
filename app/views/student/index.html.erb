@@ -1,0 +1,32 @@
+<div class="d-flex flex-column align-items-center">
+  <strong style="font-size: 18px; margin: 10px auto">All students</strong>
+  <table class="table table-striped w-10 table-hover" style="width: 55rem;">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Surname</th>
+      <th scope="col">Edit action</th>
+      <th scope="col">Delete action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @students.each do |student| %>
+      <tr>
+        <td><%= student.id %></td>
+        <td><%= student.name %></td>
+        <td><%= student.surname %></td>
+        <td class="link-style-edit">
+          <%= link_to 'Edit', "/student/#{student.id}/edit" %>
+        </td>
+        <td class="link-style-delete">
+          <%= link_to 'Delete', "/student/#{student.id}/destroy" %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+  <button type="button" class="btn btn-success link-style-create" style="margin-top: 50px">
+    <%= link_to 'Create student', "/student/new" %>
+  </button>
+</div>

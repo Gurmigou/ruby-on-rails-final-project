@@ -1,0 +1,42 @@
+table {
+    border: 1px solid grey;
+}
+
+.link-style-create > a {
+    color: white;
+    text-decoration: none;
+}
+
+.link-style-edit > a {
+    text-align: center;
+    color: cornflowerblue;
+    text-decoration: none;
+}
+
+.link-style-edit > a:hover {
+    color: #2569e0;
+}
+
+.link-style-delete > a {
+    text-align: center;
+    color: #ef4444;
+    text-decoration: none;
+}
+
+.link-style-delete > a:hover {
+    color: #e31717;
+}
+
+.nav-bar {
+    width: 55rem;
+    margin: 0 auto 30px;
+    background: #8aa8e0;
+    padding: 1rem;
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.nav-bar-element {
+    margin: 0 50px;
+}

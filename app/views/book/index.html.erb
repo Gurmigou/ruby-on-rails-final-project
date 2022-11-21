@@ -1,0 +1,36 @@
+<div class="d-flex flex-column align-items-center">
+  <strong style="font-size: 18px; margin: 10px auto">All books</strong>
+  <table class="table table-striped w-10 table-hover" style="width: 55rem">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Order date</th>
+      <th scope="col">Issue date</th>
+      <th scope="col">Taken by student</th>
+      <th scope="col">Edit action</th>
+      <th scope="col">Delete action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @books.each do |book| %>
+      <tr>
+        <td><%= book.id %></td>
+        <td><%= book.name %></td>
+        <td><%= book.order_date %></td>
+        <td><%= book.issue_date %></td>
+        <td><%= book.student.to_s %></td>
+        <td class="link-style-edit">
+          <%= link_to 'Edit', "/student/#{book.id}/edit" %>
+        </td>
+        <td class="link-style-delete">
+          <%= link_to 'Delete', "/student/#{book.id}/destroy" %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+  <button type="button" class="btn btn-success link-style-create" style="margin-top: 50px">
+    <%= link_to 'Create book', "/book/new" %>
+  </button>
+</div>
