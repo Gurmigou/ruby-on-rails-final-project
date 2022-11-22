@@ -11,12 +11,8 @@ module Abc
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
 
-    # Configuration for the application, engines, and railties goes here.
-    #
-    # These settings can be overridden in specific environments using the files
-    # in config/environments, which are processed later.
-    #
-    # config.time_zone = "Central Time (US & Canada)"
-    # config.eager_load_paths << Rails.root.join("extras")
+    I18n.load_path += Dir[Rails.root.join('lib', 'locale', '*.{rb,yml}')]
+    I18n.available_locales = [:en, :ua]
+    I18n.default_locale = :en
   end
 end

@@ -11,11 +11,24 @@ class StudentController < ApplicationController
   end
 
   def edit
-    # puts "Id: #{params[:id]}"
     @student = Student.find(params[:id])
   end
 
   def update
+    @student = Student.find(params[:id])
+    @student.update(
+      name: params[:student][:name],
+      surname: params[:student][:surname]
+    )
+    redirect_to student_index_path
+  end
+
+  def destroy
+    @student = Student.find(params[:id])
+    Book.destroy_by(student_id: @student.id)
+
+    @student.destroy
+    redirect_to student_index_path
   end
 
   def new

@@ -1,20 +1,37 @@
-<form class="d-flex flex-column" style="width: 30rem; margin: 0 auto" action="/book" method="POST">
-  <strong style="font-size: 18px; text-align: center; margin: 15px 0">Create new book</strong>
-  <div class="mb-3">
-    <label for="name" class="form-label">Name</label>
-    <input type="text" class="form-control" name="name" id="name">
+<!--<form class="d-flex flex-column" style="width: 30rem; margin: 0 auto" action="/book" method="POST">-->
+<!--  <strong style="font-size: 18px; text-align: center; margin: 15px 0">Create new book</strong>-->
+<!--  <div class="mb-3">-->
+<!--    <label for="name" class="form-label">Name</label>-->
+<!--    <input type="text" class="form-control" name="name" id="name">-->
+<!--  </div>-->
+<!--  <div class="mb-3">-->
+<!--    <label for="order_date" class="form-label">Order date</label>-->
+<!--    <input type="text" class="form-control" name="order_date" id="order_date">-->
+<!--  </div>-->
+<!--  <div class="mb-3">-->
+<!--    <label for="issue_date" class="form-label">Issue date</label>-->
+<!--    <input type="text" class="form-control" name="issue_date" id="issue_date">-->
+<!--  </div>-->
+<!--  <div class="mb-3">-->
+<!--    <label for="student_id" class="form-label">Student</label>-->
+<!--    <input type="text" class="form-control" name="student_id" id="student_id">-->
+<!--  </div>-->
+<!--  <button type="submit" class="btn btn-primary">Create</button>-->
+<!--</form>-->
+
+<div class="ms-2">
+  <h1 class="m3 d-flex justify-content-center align-self-center">New Book</h1>
+  <%= form_for :book, url: book_index_path do |form| %>
+    <div class="d-flex flex-column" style="margin: 0 auto; width: 30rem">
+      <p>Name</p>
+      <p><%= form.text_field(:name, { :class => 'form-control' }) %></p>
+      <p>Order date</p>
+      <p><%= form.date_field :order_date, :class => 'form-control' %></p>
+      <p>Issue date</p>
+      <p><%= form.date_field(:issue_date, { :class => 'form-control' }) %></p>
+      <p>Student</p>
+      <p><%= select_tag 'student_id', options_for_select(@students.collect { |student| [student.name + " " + student.surname, student.id] }), class: "form-control" %></p>
+      <p><%= form.submit({ :class => 'btn btn-primary' }) %></p>
+  <% end %>
   </div>
-  <div class="mb-3">
-    <label for="order_date" class="form-label">Order date</label>
-    <input type="text" class="form-control" name="order_date" id="order_date">
-  </div>
-  <div class="mb-3">
-    <label for="issue_date" class="form-label">Issue date</label>
-    <input type="text" class="form-control" name="issue_date" id="issue_date">
-  </div>
-  <div class="mb-3">
-    <label for="student_id" class="form-label">Student</label>
-    <input type="text" class="form-control" name="student_id" id="student_id">
-  </div>
-  <button type="submit" class="btn btn-primary">Create</button>
-</form>
+</div>

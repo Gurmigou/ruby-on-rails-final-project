@@ -17,10 +17,10 @@
         <td><%= student.name %></td>
         <td><%= student.surname %></td>
         <td class="link-style-edit">
-          <%= link_to 'Edit', "/student/#{student.id}/edit" %>
+          <%= button_to 'Edit', edit_student_path(student), :method => :get, :class => "btn btn-primary" %>
         </td>
         <td class="link-style-delete">
-          <%= link_to 'Delete', "/student/#{student.id}/destroy" %>
+          <%= button_to 'Delete', student_path(student), :method => :delete, :class => "btn btn-danger" %>
         </td>
       </tr>
     <% end %>

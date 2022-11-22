@@ -1,12 +1,10 @@
-<form class="d-flex flex-column" style="width: 30rem; margin: 0 auto" action="<%=  "/student/#{@student.id}" %>" name="_method" method="PUT">
-  <strong style="font-size: 18px; text-align: center; margin: 15px 0"><%= "Edit student with id  #{@student.id}" %></strong>
-  <div class="mb-3">
-    <label for="name" class="form-label">Name</label>
-    <input type="text" placeholder="<%= @student.name %>" class="form-control" name="name" id="name">
-  </div>
-  <div class="mb-3">
-    <label for="surname" class="form-label">Surname</label>
-    <input type="text" placeholder="<%= @student.surname %>" class="form-control" name="surname" id="surname">
-  </div>
-  <button type="submit" class="btn btn-primary">Update</button>
-</form>
+<h1 style="font-size: 26px" class="m3 d-flex justify-content-center align-self-center">Edit Student <%= @student.id %></h1>
+<%= form_for :student, url: student_path(@student), method: :patch do |form| %>
+  <div class="d-flex flex-column" style="margin: 0 auto; width: 30rem">
+    <p>Name</p>
+    <p><%= form.text_field(:name, { :class => 'form-control' }) %></p>
+    <p>Surname</p>
+    <p><%= form.text_field(:surname, { :class => 'form-control' }) %></p>
+    <p style="margin: 0 auto"><%= form.submit({ :class => 'btn btn-primary' }) %></p>
+<% end %>
+</div>

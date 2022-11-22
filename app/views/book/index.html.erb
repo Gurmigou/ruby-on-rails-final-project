@@ -21,10 +21,10 @@
         <td><%= book.issue_date %></td>
         <td><%= book.student.to_s %></td>
         <td class="link-style-edit">
-          <%= link_to 'Edit', "/student/#{book.id}/edit" %>
+          <%= button_to 'Edit', edit_book_path(book), :method => :get, :class => "btn btn-primary" %>
         </td>
         <td class="link-style-delete">
-          <%= link_to 'Delete', "/student/#{book.id}/destroy" %>
+          <%= button_to 'Delete', book_path(book), :method => :delete, :class => "btn btn-danger" %>
         </td>
       </tr>
     <% end %>
