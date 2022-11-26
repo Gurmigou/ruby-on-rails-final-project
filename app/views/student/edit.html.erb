@@ -1,9 +1,9 @@
-<h1 style="font-size: 26px" class="m3 d-flex justify-content-center align-self-center">Edit Student <%= @student.id %></h1>
+<h1 style="font-size: 26px" class="m3 d-flex justify-content-center align-self-center"><%= t('students.edit') %> <%= @student.id %></h1>
 <%= form_for :student, url: student_path(@student), method: :patch do |form| %>
   <div class="d-flex flex-column" style="margin: 0 auto; width: 30rem">
-    <p>Name</p>
+    <p><%= t('form.name') %></p>
     <p><%= form.text_field(:name, { :class => 'form-control' }) %></p>
-    <p>Surname</p>
+    <p><%= t('form.surname') %></p>
     <p><%= form.text_field(:surname, { :class => 'form-control' }) %></p>
     <p style="margin: 0 auto"><%= form.submit({ :class => 'btn btn-primary' }) %></p>
 <% end %>

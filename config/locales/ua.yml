@@ -1,4 +1,10 @@
 ua:
   menu:
     create-new-student: "Створити нового студента"
+    create-new-book: "Нова книга"
     language: "Мова"
+    students: "Студенти"
+    books: "Книги"
+  form:
+    name: "Ім'я"
+    surname: "Прізвище"

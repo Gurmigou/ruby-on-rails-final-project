@@ -1,4 +1,25 @@
 en:
   menu:
     create-new-student: "Create new user"
+    create-new-book: "Create new book"
     language: "Language"
+    students: "Students"
+    books: "Books"
+  form:
+    edit: "Edit"
+    delete: "Delete"
+    create: "Create"
+    name: "Name"
+    surname: "Surname"
+    order-date: "Order date"
+    issue-date: "Issue date"
+    student: "Student"
+    taken-by-student: "Taken by student"
+  students:
+    all-students: "All students"
+    create: "Create new student"
+    edit: "Edit student"
+  books:
+    all-books: "All books"
+    create: "Create new book"
+    edit: "Edit book"
