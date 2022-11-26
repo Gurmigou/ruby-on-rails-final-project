@@ -8,3 +8,18 @@ ua:
   form:
     name: "Ім'я"
     surname: "Прізвище"
+    order-date: "Дата замовлення"
+    issue-date: "Дата видачі"
+    student: "Студент"
+    taken-by-student: "Взято студентом"
+    edit: "Редагувати"
+    delete: "Видалити"
+    create: "Створити"
+  students:
+    all-students: "Всі студенти"
+    create: "Створити нового студента"
+    edit: "Редагувати студента"
+  books:
+    all-books: "Всі книги"
+    create: "Створити нову книгу"
+    edit: "Редагувати книгу"
